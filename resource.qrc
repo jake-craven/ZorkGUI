@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>ROOMS/east.png</file>
+        <file>ROOMS/north.png</file>
+        <file>ROOMS/Room.png</file>
+        <file>ROOMS/south.png</file>
+        <file>ROOMS/west.png</file>
+        <file>ROOMS/RoomFire.png</file>
+        <file>ROOMS/OutsideA.png</file>
+        <file>ROOMS/OutsideD.png</file>
+        <file>ROOMS/OutsideF.png</file>
+        <file>ROOMS/player.png</file>
+        <file>Break.wav</file>
+        <file>Just Cause 3 Soundtrack - Torre Florim - Firestarter (Intro Song).mp3</file>
+        <file>ROOMS/FireB.png</file>
+        <file>ROOMS/FireC.png</file>
+        <file>ROOMS/FireE.png</file>
+        <file>ROOMS/FireG.png</file>
+        <file>ROOMS/FireH.png</file>
+        <file>ROOMS/FireI.png</file>
+    </qresource>
+</RCC>
