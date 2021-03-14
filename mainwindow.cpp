@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
     else
         ui->WestBtn->setEnabled(true);
 
-    ui->label->setText("You  feel a dark desire to BUUUUURRRRRNNNN!!!\nFind a way to burn down every house by\ncrafting different items and placing them in a house!\nBe careful though as you might just burn yourself\nbe sure to go straight to the exit once you start a fire\n Be sure to remember the way out");
+    ui->label->setText("You feel a dark desire to BUUUUURRRRRNNNN!!!\nFind a way to burn down every house by\ncrafting different items and placing them in a house!\nBe careful though as you might just burn yourself\nso be sure to go straight to the exit once you start a fire\nDon't the way out");
     QMediaPlaylist *playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/resource/Just Cause 3 Soundtrack - Torre Florim - Firestarter (Intro Song).mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
@@ -96,10 +96,9 @@ void MainWindow::fillList(){
     this->roomItems = current->displayItem();
     ui->inventoryList->clear();
     ui->roomItemList->clear();
-    int i;
-    for(i = 0; i < inventory.size() ; i++)
+    for(size_t i = 0; i < inventory.size() ; i++)
         ui->inventoryList->addItem(QString::fromStdString(inventory[i].getShortDescription()));
-    for(i = 0; i < roomItems.size(); i++)
+    for(size_t i = 0; i < roomItems.size(); i++)
         ui->roomItemList->addItem(QString::fromStdString(roomItems[i].getShortDescription()));
 }
 
@@ -114,7 +113,7 @@ bool MainWindow::getCraft()
 }
 void MainWindow::on_takeAllButton_clicked()
 {
-    for(int i = 0; i < roomItems.size(); i++){
+    for(size_t i = 0; i < roomItems.size(); i++){
         ui->inventoryList->addItem(QString::fromStdString(roomItems[i].getShortDescription()));
         inventory.push_back( roomItems[i]);
         current->removeItemFromRoom(1);
@@ -235,7 +234,7 @@ void MainWindow::move(string dir){
            outside->setHidden(true);
        }
        else{
-           ui->label->setText("You  feel a dark desire to BUUUUURRRRRNNNN!!!\nFind a way to burn down every house by\ncrafting different items and placing them in a house!\nBe careful though as you might just burn yourself\nbe sure to go straight to the exit once you start a fire\n Be sure to remember the way out");
+           ui->label->setText("You feel a dark desire to BUUUUURRRRRNNNN!!!\nFind a way to burn down every house by\ncrafting different items and placing them in a house!\nBe careful though as you might just burn yourself\nso be sure to go straight to the exit once you start a fire\nDon't the way out");
 
            map->setHidden(true);
            outside->setHidden(false);
@@ -296,7 +295,7 @@ void MainWindow::on_placeButton_clicked()
                h->setFire();
                outside->HouseFire(h);
                current->setNextFire();
-               ui->label->setText("The house is on fire and your power grows\n Quit stalling and get out");
+               ui->label->setText("The house is on fire and your power grows\nQuit stalling and get out");
                win++;
                if(win > 5){
                    gameWin();
